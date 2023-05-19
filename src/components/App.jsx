@@ -1,5 +1,20 @@
+import CssBaseline from "@mui/material/CssBaseline";
+import Navbar from "./Navbar";
+import Montages from "./Montages";
+import { Routes, Route } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
+
 const App = () => {
-  return <main></main>;
+  const theme = useTheme();
+  return (
+    <main>
+      <CssBaseline />
+      <Navbar theme={theme} />
+      <Routes>
+        <Route to="/" element={<Montages />} />
+      </Routes>
+    </main>
+  );
 };
 
 export default App;
