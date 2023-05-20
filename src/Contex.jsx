@@ -14,7 +14,8 @@ const AppProvider = ({ children }) => {
     }
     return channels;
   };
-  const rows = getDataFromLocalStorage() || data.channels;
+  const channelData = getDataFromLocalStorage();
+  const rows = channelData.length > 0 ? channelData : data;
   return <AppContext.Provider value={{ rows }}>{children}</AppContext.Provider>;
 };
 
