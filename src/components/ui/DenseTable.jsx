@@ -31,7 +31,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 function DenseTable({ edit, setStep, isSaved }) {
   const { rows } = useGlobalContext();
   const [channelData, setChannelData] = useState(rows);
-
+  console.log(rows);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 250 }} size="small" aria-label="a dense table">
@@ -48,7 +48,7 @@ function DenseTable({ edit, setStep, isSaved }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.channels.map((row) => (
             <TableRow
               key={row.id}
               sx={{
