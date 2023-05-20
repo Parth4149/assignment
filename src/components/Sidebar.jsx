@@ -9,11 +9,9 @@ import {
   Box,
   ListItemText,
 } from "@mui/material";
-import GridViewIcon from "@mui/icons-material/GridView";
-import NoteAddIcon from "@mui/icons-material/NoteAdd";
-import PaymentsIcon from "@mui/icons-material/Payments";
+import { GridView, NoteAdd, Payments } from "@mui/icons-material";
 
-const Sidebar = ({ theme, setMobileOpen }) => {
+const Sidebar = ({ setMobileOpen }) => {
   const [selectedIndex, setSelectedIndex] = useState(1);
   return (
     <Box className="sidebar">
@@ -30,10 +28,13 @@ const Sidebar = ({ theme, setMobileOpen }) => {
       <List>
         <ListItemButton
           selected={selectedIndex === 0}
-          onClick={() => setSelectedIndex(0)}
+          onClick={() => {
+            setSelectedIndex(0);
+            setMobileOpen(false);
+          }}
         >
           <ListItemIcon>
-            <GridViewIcon className="white" />
+            <GridView className="white" />
           </ListItemIcon>
           <ListItemText primary="Dashboard" className="white" />
         </ListItemButton>
@@ -42,7 +43,7 @@ const Sidebar = ({ theme, setMobileOpen }) => {
           onClick={() => setSelectedIndex(1)}
         >
           <ListItemIcon>
-            <NoteAddIcon className="white" />
+            <NoteAdd className="white" />
           </ListItemIcon>
           <ListItemText primary="Montages" className="white" />
         </ListItemButton>
@@ -51,7 +52,7 @@ const Sidebar = ({ theme, setMobileOpen }) => {
           onClick={() => setSelectedIndex(2)}
         >
           <ListItemIcon>
-            <PaymentsIcon className="white" />
+            <Payments className="white" />
           </ListItemIcon>
           <ListItemText primary="Credits" className="white" />
         </ListItemButton>

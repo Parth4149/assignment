@@ -4,7 +4,6 @@
   background: var(--grey-800);
   height: 100%;
 }
-
 .logo_container {
   all: unset;
   text-align: center;
@@ -12,4 +11,54 @@
 }
 .white {
   color: var(--white);
+}
+.toolbar {
+  margin-left: 14rem;
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+}
+.montages {
+  margin-left: 14rem;
+  margin-top: 4rem;
+}
+.account__icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (max-width: 480px) {
+  .toolbar,
+  .montages {
+    margin-left: 0;
+  }
+}
+
+.steppers {
+  /* margin: 4rem 0; */
+  padding: 2rem 0;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+  /* color: #388e3c !important; */
+  fill: #388e3c;
+}
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  /* color: #388e3c !important; */
+  fill: #388e3c;
+}
+.css-z7uhs0-MuiStepConnector-line {
+  border-top-width: 2px !important;
+}
+
+.steppers svg {
+  font-size: 2rem;
+}
+.css-zpcwqm-MuiStepConnector-root {
+  top: 16px !important;
+}
+
+.MuiStepLabel-iconContainer.Mui-active + .MuiStepLabel-labelContainer span,
+.MuiStepLabel-iconContainer.Mui-completed + .MuiStepLabel-labelContainer span {
+  color: #388e3c !important;
 }
