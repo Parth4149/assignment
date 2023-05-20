@@ -1,4 +1,4 @@
-import { useContext, createContext } from "react";
+import { useState, useContext, createContext } from "react";
 import data from "./schema.json";
 
 const AppContext = createContext(null);
@@ -14,10 +14,14 @@ const AppProvider = ({ children }) => {
     }
     return channels;
   };
-  const channelData = getDataFromLocalStorage();
-  const rows = channelData.length > 0 ? channelData : data;
-  console.log(rows);
-  return <AppContext.Provider value={{ rows }}>{children}</AppContext.Provider>;
+  const dataFromStorage = getDataFromLocalStorage();
+  const rows = dataFromStorage.length > 0 ? dataFromStorage : data.channels;
+  const [channelData, setChannelData] = useState(rows);
+  return (
+    <AppContext.Provider value={{ rows, channelData, setChannelData }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export const useGlobalContext = () => {

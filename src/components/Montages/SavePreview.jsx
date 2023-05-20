@@ -4,6 +4,7 @@ import DenseTable from "../ui/DenseTable";
 
 const SavePreview = ({ setStep }) => {
   const [isSaved, setIsSaved] = useState(false);
+
   return (
     <>
       <section className="mapchannel">

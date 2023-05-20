@@ -8,13 +8,15 @@ function ReferenceChannel({ channels, id, channelData, setChannelData, data }) {
 
   const handleChange = (e) => {
     setChannel(e.target.value);
-    const data = channelData.map((ch) => {
-      if (ch?.id === id) {
-        return { ...ch, referenceChannel: e.target.value };
-      } else {
-        return ch;
-      }
-    });
+    const data =
+      channelData.length > 0 &&
+      channelData.map((ch) => {
+        if (ch?.id === id) {
+          return { ...ch, referenceChannel: e.target.value };
+        } else {
+          return ch;
+        }
+      });
     setChannelData(data);
     localStorage.setItem("channels", JSON.stringify(data));
   };
