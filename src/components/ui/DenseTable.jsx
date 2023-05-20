@@ -8,6 +8,7 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Button,
 } from "@mui/material";
 import { tableCellClasses } from "@mui/material/TableCell";
 import PrimaryChannel from "../ui/PrimaryChannel";
@@ -25,10 +26,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
-function DenseTable() {
+function DenseTable({ edit, setStep, isSaved }) {
   const { rows } = useGlobalContext();
   const [channelData, setChannelData] = useState(rows);
-  console.log("channelData", channelData);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -74,7 +74,21 @@ function DenseTable() {
                   data={data}
                 />
               </TableCell>
-              <TableCell>N/A</TableCell>
+              <TableCell>
+                {edit && edit === true ? (
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    sx={{ textTransform: "capitalize" }}
+                    onClick={() => setStep(1)}
+                    disabled={isSaved}
+                  >
+                    Edit Channel
+                  </Button>
+                ) : (
+                  "N/A"
+                )}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

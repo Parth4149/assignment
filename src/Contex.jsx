@@ -1,11 +1,11 @@
-import { useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext } from "react";
 import data from "./schema.json";
 
 const AppContext = createContext(null);
 
 const AppProvider = ({ children }) => {
   const getDataFromLocalStorage = () => {
-    console.log("LocalStrorage");
+    // console.log("LocalStrorage");
     let channels = localStorage.getItem("channels");
     if (channels) {
       channels = JSON.parse(channels);

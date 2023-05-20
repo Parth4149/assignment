@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Divider, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import Steppers from "./Steppers";
 import Upload from "./Montages/Upload";
 import MapChannel from "./Montages/MapChannel";
@@ -13,7 +13,7 @@ const Montages = () => {
       <Box className="montages__inner">
         {step === 0 && <Upload setStep={setStep} />}
         {step === 1 && <MapChannel setStep={setStep} />}
-        {step === 2 && <SavePreview />}
+        {step === 2 && <SavePreview setStep={setStep} />}
       </Box>
     </section>
   );
