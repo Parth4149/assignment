@@ -1,0 +1,42 @@
+{
+  "formats": ["json", "csv"],
+  "version": 1,
+  "channels": [
+    {
+      "channel": "C2-C3",
+      "primaryChannel": ["C2", "C3"],
+      "referenceChannel": ["null", "A2", "A3"]
+    },
+    {
+      "channel": "C4-C5",
+      "primaryChannel": ["C4", "C5"],
+      "referenceChannel": ["null", "A2", "A3", "A4", "A5"]
+    },
+    {
+      "channel": "C6-C8",
+      "primaryChannel": ["C2", "C3"],
+      "referenceChannel": ["null", "A6", "A3"]
+    },
+    {
+      "channel": "C3-C2",
+      "primaryChannel": ["C2", "C3"],
+      "referenceChannel": ["null", "A2", "A3"]
+    },
+    {
+      "channel": "C7-C8",
+      "primaryChannel": ["C2", "C3", "C7"],
+      "referenceChannel": ["null", "A2", "A3"]
+    },
+    {
+      "channel": "C9-C10",
+      "primaryChannel": ["C2", "C3"],
+      "referenceChannel": ["null", "A2", "A3"]
+    }
+  ],
+  "optionals": [
+    {
+      "optional1": true,
+      "optional2": true
+    }
+  ]
+}
