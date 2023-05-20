@@ -1,11 +1,11 @@
 import { Divider, Box, Stepper, Step, StepLabel } from "@mui/material";
 
-const Steppers = () => {
+const Steppers = ({ step }) => {
   const steps = ["Upload EDFs", "Map Channels", "Save & Preview"];
   return (
-    <>
-      <Box className="steppers">
-        <Stepper activeStep={1} alternativeLabel>
+    <section className="steppers">
+      <Box className="steppers__inner">
+        <Stepper activeStep={step} alternativeLabel>
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
@@ -14,7 +14,7 @@ const Steppers = () => {
         </Stepper>
       </Box>
       <Divider />
-    </>
+    </section>
   );
 };
 

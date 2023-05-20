@@ -7,7 +7,7 @@ import { useTheme } from "@mui/material/styles";
 const App = () => {
   const theme = useTheme();
   return (
-    <main>
+    <main className="app">
       <CssBaseline />
       <Navbar theme={theme} />
       <Routes>

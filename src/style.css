@@ -18,25 +18,45 @@
   justify-content: space-between;
   height: 4rem;
 }
-.montages {
-  margin-left: 14rem;
-  margin-top: 4rem;
-}
+
 .account__icon {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
+
+.steppers {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+.steppers__inner {
+  padding: 1rem 0;
+  width: 100%;
+  margin: 0 2rem;
+  background: var(--white);
+}
+
+.montages {
+  margin-left: 14rem;
+  margin-top: 4rem;
+  overflow: hidden;
+}
+.montages__inner {
+  margin: 0 2rem;
+}
+
 @media (max-width: 480px) {
   .toolbar,
   .montages {
     margin-left: 0;
   }
-}
-
-.steppers {
-  /* margin: 4rem 0; */
-  padding: 2rem 0;
+  .steppers {
+    margin: 1rem 0;
+  }
+  .steppers__inner {
+    margin: 0 1rem;
+  }
 }
 
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
@@ -61,4 +81,59 @@
 .MuiStepLabel-iconContainer.Mui-active + .MuiStepLabel-labelContainer span,
 .MuiStepLabel-iconContainer.Mui-completed + .MuiStepLabel-labelContainer span {
   color: #388e3c !important;
+}
+
+.upload {
+  height: 20rem;
+  background: var(--white);
+  padding: 1rem;
+}
+.upload__inner {
+  /* display: grid; */
+  /* place-items: center; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--grey-500);
+}
+.upload__inner svg {
+  font-size: 3rem;
+}
+.upload__inner #file {
+  margin: 0.5rem 0;
+  max-width: 14rem;
+}
+.upload__inner #file::-webkit-file-upload-button {
+  display: none;
+}
+.upload__inner #file::before {
+  margin-left: 2rem;
+  content: "Browse Files";
+  display: inline-block;
+  background: var(--grey-200);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 4px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  /* font-weight: 600; */
+  font-size: 10pt;
+}
+.upload__inner #file:hover::before {
+  border-color: var(--grey-600);
+}
+.upload__inner #file:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.upload__footer {
+  background: var(--white);
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+  padding: 1rem;
 }

@@ -15,7 +15,7 @@ const Navbar = ({ theme }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ background: "#f1f5f9" }}>
         <Toolbar className="toolbar">
           <IconButton
             onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
@@ -25,10 +25,12 @@ const Navbar = ({ theme }) => {
             <Menu />
           </IconButton>
           <div className="account__icon">
-            <IconButton color="inherit">
+            <IconButton color="primary">
               <AccountCircle />
             </IconButton>
-            <Typography variant="p">Name</Typography>
+            <Typography variant="p" color="GrayText">
+              Name
+            </Typography>
           </div>
         </Toolbar>
       </AppBar>

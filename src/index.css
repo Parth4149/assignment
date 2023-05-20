@@ -56,8 +56,7 @@
 body {
   font-family: "Poppins", sans-serif;
   width: 100%;
-  background: var(--grey-100);
-  color: var(--grey-700);
+  background: var(--grey-100) !important;
 }
 
 ul,
