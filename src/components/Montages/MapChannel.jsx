@@ -2,7 +2,6 @@ import { Button } from "@mui/material";
 import DenseTable from "../ui/DenseTable";
 
 const MapChannel = ({ setStep }) => {
-  console.log("Map Channel");
   return (
     <>
       <section className="mapchannel">

@@ -2,7 +2,6 @@ import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { Button } from "@mui/material";
 
 const Upload = ({ setStep }) => {
-  console.log("Upload");
   return (
     <>
       <section className="upload">

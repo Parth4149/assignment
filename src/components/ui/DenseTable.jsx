@@ -8,14 +8,14 @@ import {
   TableHead,
   TableRow,
   Paper,
-  MenuItem,
-  FormControl,
-  Select,
 } from "@mui/material";
 import { tableCellClasses } from "@mui/material/TableCell";
+import PrimaryChannel from "../ui/PrimaryChannel";
+import ReferenceChannel from "../ui/ReferenceChannel";
 import data from "../../schema.json";
+import { useGlobalContext } from "../../Contex";
 
-const rows = data.channels;
+// const rows = getDataFromLocalStorage() || data.channels;
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -26,31 +26,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 function DenseTable() {
-  const [age, setAge] = useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
-  const PrimaryChannel = ({ channels }) => (
-    <Select
-      value={age}
-      onChange={handleChange}
-      displayEmpty
-      inputProps={{ "aria-label": "Without label" }}
-      size="small"
-    >
-      <MenuItem value="">
-        <em>Select Channel</em>
-      </MenuItem>
-      {channels.map((channel) => (
-        <MenuItem value={10} key={channel}>
-          {channel}
-        </MenuItem>
-      ))}
-    </Select>
-  );
-
+  const { rows } = useGlobalContext();
+  const [channelData, setChannelData] = useState(rows);
+  console.log("channelData", channelData);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -69,7 +47,7 @@ function DenseTable() {
         <TableBody>
           {rows.map((row) => (
             <TableRow
-              key={row.name}
+              key={row.id}
               sx={{
                 "&:last-child td, &:last-child th": { border: 0 },
                 height: "4rem",
@@ -79,10 +57,22 @@ function DenseTable() {
                 {row.channel}
               </TableCell>
               <TableCell>
-                <PrimaryChannel channels={row.primaryChannel} />
+                <PrimaryChannel
+                  channels={row}
+                  channelData={channelData}
+                  setChannelData={setChannelData}
+                  id={row.id}
+                  data={data}
+                />
               </TableCell>
               <TableCell>
-                <PrimaryChannel channels={row.referenceChannel} />
+                <ReferenceChannel
+                  channels={row}
+                  channelData={channelData}
+                  setChannelData={setChannelData}
+                  id={row.id}
+                  data={data}
+                />
               </TableCell>
               <TableCell>N/A</TableCell>
             </TableRow>
