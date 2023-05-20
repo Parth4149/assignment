@@ -19,7 +19,7 @@ const Navbar = ({ theme }) => {
         <Toolbar className="toolbar">
           <IconButton
             onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
-            color="inherit"
+            color="primary"
             sx={{ [theme.breakpoints.up("sm")]: { display: "none" } }}
           >
             <Menu />

@@ -16,22 +16,25 @@ import ReferenceChannel from "../ui/ReferenceChannel";
 import data from "../../schema.json";
 import { useGlobalContext } from "../../Contex";
 
-// const rows = getDataFromLocalStorage() || data.channels;
-
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "#c2e0ff",
     color: theme.palette.text,
     height: "3rem",
   },
+  [theme.breakpoints.down("sm")]: {
+    height: "5rem",
+    width: "90px !important",
+  },
 }));
 
 function DenseTable({ edit, setStep, isSaved }) {
   const { rows } = useGlobalContext();
   const [channelData, setChannelData] = useState(rows);
+
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 250 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <StyledTableCell>Channel</StyledTableCell>
